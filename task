@@ -1,5 +1,5 @@
 character = dict()
-final_word = ""
+final_word = []
 
 character["."] = ["1"]
 character[","] = ["11"]
@@ -44,6 +44,12 @@ character[" "] = ["0"]
 
 word = input("Enter something: ")
 
-for i in word:
+for i in word.upper():
     if i in character.keys():
-        print(character[i], end='')
+        final_word.append(character[i])
+
+
+for j in range(len(final_word)):
+    final_word[j] = str(final_word[j])
+
+print((''.join(final_word)).replace("['", '').replace("']", ''))
